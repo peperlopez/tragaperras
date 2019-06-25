@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>tragaperras</title>
+</head>
+<body  >
+
+
+<div id="" align="center" style="background-image: url('C:/Nueva carpeta/img/fondo.jpg'); width: 100%; height: 100vh; ">
+<img id="posicion1" alt="" src="c:/img/fig6.png" width="200"></img>
+<img id="posicion2" alt="" src="c:/img/fig6.png" width="200"></img>
+<img id="posicion3" alt="" src="c:/img/fig6.png" width="200"></img>
+<img id="posicion4" alt="" src="c:/img/fig6.png" width="200"></img>
+<img id="posicion5" alt="" src="c:/img/fig6.png" width="200"></img>
+<p></p>
+<p></p>
+<button type="button" id="jugar">Jugar</button>
+<p></p>
+<button type="button" onclick="izquierda()">izquierda</button><button type="button" onclick="centro()">centro</button><button type="button" onclick="derecha()">derecha</button>
+<br>
+<br>
+<br>
+<img src="c:/nueva carpeta/img/avan.jpg"></img>
+<br>
+<br>
+<br>
+<input type="text" name="puntos" id="puntos"></input>
+
+<input type="text" name="creditos" id="creditos"></input>
+
+</div>
+
+<script type="text/javascript">
+ 
+var figuras=[];
+
+//Definir evento click del boton id="tirar"
+document.getElementById("jugar").onclick=function(){
+	
+	
+	
+	for (var i=1; i<6; i++){
+		var azar= getRndInteger(1,6);
+		figuras.push(azar);
+		document.getElementById("posicion"+i).src="c:/img/fig"+azar+".png";
+		
+	 var pos1 = document.getElementById("posicion1").value ;
+	 var pos2 = document.getElementById("posicion2").value ;
+	 var pos3 = document.getElementById("posicion3").value ;
+	 var pos4 = document.getElementById("posicion4").value ;
+	 var pos5 = document.getElementById("posicion5").value ;
+	console.log(pos1);
+			
+			
+	}
+}
+       
+				//leer las variables y recogerlas en su posicion 	
+			
+	
+					
+				
+
+	
+	
+		
+
+
+
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+
+function getMaxNumberInArray(arrNumbers){
+	var max=arrNumbers[0];
+	for(var j=1; j<arrNumbers.length; j++){
+		if(arrNumbers[j]>max){
+			max=arrNumbers[j];
+		}
+	}
+	return max;
+}
+
+	
+
+
+
+</script>
+</body>
+</html>
