@@ -7,7 +7,7 @@
 <body>
 
 
-<div id="posicion" align="center" style="background-image: url(''); width: 100%; height: 100vh; ">
+<div id="" align="center" style="background-image: url(''); width: 100%; height: 100vh; ">
 <img id="posicion1" alt="" src="/tragaperras/fig6.png" width="200"></img>
 <img id="posicion2" alt="" src="/tragaperras/fig6.png" width="200"></img>
 <img id="posicion3" alt="" src="/tragaperras/fig6.png" width="200"></img>
@@ -28,51 +28,51 @@
 </div>
 
 <script type="text/javascript">
-/*var fig1 = "fig" + 1 + ".png";
-var fig2 = "fig" + 2 + ".png";
-var fig3 = "fig" + 3 + ".png";
-var fig4 = "fig" + 4 + ".png";
-var fig5 = "fig" + 5 + ".png";
-var fig6 = "fig" + 6 + ".png";
-var fig7 = "fig" + 7 + ".png";
-*/
+var tablapremios=[111,117,222,227,333,337,444,447,555,557,666,667];
 
 
 var combinacion=[];	
 var figuras=[];
 var z ;
+var puntos =100;
+
 //Definir evento click del boton id="tirar"
 document.getElementById("jugar").onclick=function(){
 	
 	
-	
 	for (var i=1; i<4; i++){
 		var azar= getRndInteger(1,7);
-		figuras.push(azar);
-		document.getElementById("posicion"+i).src="/tragaperras/fig"+azar+".png";
 		combinacion.push(azar);
-		console.log("saber la combinacion"+combinacion);
-	
-		
-		var pos1 = document.getElementById("posicion1").src;
-		var pos2 = document.getElementById("posicion2").src;
-		var pos3 = document.getElementById("posicion3").src;
-		
-		
+		document.getElementById("posicion1").src="/tragaperras/fig"+azar+".png";
+		document.getElementById("posicion2").src="/tragaperras/fig"+azar+".png";
+		document.getElementById("posicion3").src="/tragaperras/fig"+azar+".png";
+		//combinacion.push(azar);
+			
+		puntos -=10;
+		var creditos = puntos / 10;
+	    document.getElementById("puntos").value= puntos;
+	    document.getElementById("creditos").value= creditos;
+	    var a = combinacion.toString(0);
+	    var b = combinacion.toString(1);
+	    var c = combinacion.toString(2);
+	    var z = a.concat(b,c);
+	    combinacion.splice(0,combinacion.length)
+	   	figuras.splice(0,figuras.length);
+	    console.log("quiero ver la "+z);
 	 
-	
+	    	 
+	    
+		
+			
 		
 	}
 	
-		
+	
 		
 			
 }
-var a = combinacion.toString(0);
-var b = combinacion.toString(1);
-var c = combinacion.toString(2);
-z = a+""+b+""+c;
-console.log("quiero ver la "+z);
+
+
 
 
        
