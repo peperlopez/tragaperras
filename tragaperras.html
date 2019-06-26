@@ -28,8 +28,8 @@
 </div>
 
 <script type="text/javascript">
-var tablapremios=[111,117,222,227,333,337,444,447,555,557,666,667];
-
+var tablapremios=[177,117,111,227,222,337,333,447,444,557,555,666];
+// aqui podriamos hacer una tabla de puntos var tablapuntos=[5,10,15,30,40,50,60,80,150,250,500];
 
 var combinacion=[];	
 var figuras=[];
@@ -38,14 +38,14 @@ var puntos =100;
 
 //Definir evento click del boton id="tirar"
 document.getElementById("jugar").onclick=function(){
-	
+
 	
 	for (var i=1; i<4; i++){
+	
 		var azar= getRndInteger(1,7);
 		combinacion.push(azar);
-		document.getElementById("posicion1").src="/tragaperras/fig"+azar+".png";
-		document.getElementById("posicion2").src="/tragaperras/fig"+azar+".png";
-		document.getElementById("posicion3").src="/tragaperras/fig"+azar+".png";
+		document.getElementById("posicion"+i).src="/tragaperras/fig"+azar+".png";
+		
 		//combinacion.push(azar);
 			
 		puntos -=10;
@@ -53,27 +53,114 @@ document.getElementById("jugar").onclick=function(){
 	    document.getElementById("puntos").value= puntos;
 	    document.getElementById("creditos").value= creditos;
 	    var a = combinacion.toString(0);
-	    var b = combinacion.toString(1);
-	    var c = combinacion.toString(2);
-	    var z = a.concat(b,c);
+	    //var b = combinacion.toString(1);
+	    //var c = combinacion.toString(2);
+	    var z =a.concat();
 	    combinacion.splice(0,combinacion.length)
 	   	figuras.splice(0,figuras.length);
 	    console.log("quiero ver la "+z);
+	}
 	 
-	    	 
-	    
+	
+
+	
+	    if( a==177 ){
+	    	alert("Premio has sumado 2 puntos ");
+	    	 puntos +=2;  
+	    	 document.getElementById("puntos").value= puntos;
+	    	  document.getElementById("creditos").value= creditos;
+	    }else if(a==117){
+	    	alert("Premio has sumado 5 puntos ");
+	    	 puntos +=5;    
+    	    document.getElementById("puntos").value= puntos;
+	    	  document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(a==111){
+	    	alert("Premio has sumado 10 puntos ");
+	    	 puntos +=10; 
+    	    document.getElementById("puntos").value= puntos;
+	    	  document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(a==227){
+	    	alert("Premio has sumado 15 puntos ");
+	     puntos +=15; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    }else if(a==222){
+	    	alert("Premio has sumado 30 puntos ");
+	    	 puntos +=30; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(a==337){
+	    	alert("Premio has sumado 40 puntos ");
+	    	 puntos +=40; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    }else if(z==333){
+	    	alert("Premio has sumado 50 puntos ");
+	    	 puntos +=50; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(z==447){
+	    	alert("Premio has sumado 60 puntos ");
+	    	puntos +=60; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(z==444){
+	    	alert(" Premio has sumado 80 puntos ");
+	    	 puntos +=80; 
+    	    document.getElementById("puntos").value= puntos;
+	    	  document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(z==557){
+	    	alert("Premio has sumado 150 puntos ");
+	    puntos +=150; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(z==555){
+	    	alert("Premio has sumado 250 puntos ");
+	    	 puntos +=250; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    	
+	    }else if(z==666){
+	    	alert("Premio has sumado 500 puntos ");
+    	     puntos +=500; 
+    	    document.getElementById("puntos").value= puntos;
+	    	document.getElementById("creditos").value= creditos;
+	    	
+	    }else{
+	    	
+	    	alert("Tirada sin premio :() ");
+	    	
+	    }
+	    	
 		
-			
+		
 		
 	}
+   	 
+	
+	    	
+	 
+	    	
+	  
+		
+			
+		
+
 	
 	
 		
 			
-}
 
 
 
+//function Buscapremio()
 
        
 
