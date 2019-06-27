@@ -28,8 +28,7 @@
 </div>
 
 <script type="text/javascript">
-var tablapremios=["1,2,1","1,1,7","1,1,1","2,2,7","2,2,2","3,3,7","3,3,3","4,4,7","4,4,4","5,5,7","5,5,5","6,6,6""1,2,1","1,1,7","1,1,1","2,2,7","2,2,2","3,3,7","3,3,3","4,4,7","4,4,4","5,5,7","5,5,5","6,6,6"];
-// aqui podriamos hacer una tabla de puntos var tablapuntos=[5,10,15,30,40,50,60,80,150,250,500];
+var tablapremios =["6,6,6","5,5,5","5,5,1","5,5,2","5,5,3","5,5,4","5,5,5","5,5,6","4,4,4","4,4,1","4,4,2","4,4,3","4,4,5","4,4,6","3,3,3","3,3,1","3,3,2","3,3,4","3,3,5","3,3,6","2,2,2","2,2,1","2,2,3","2,2,4","2,2,5","2,2,6","1,1,1","1,1,2","1,1,3","1,1,4","1,1,5","1,1,6","1,2,1","1,2,2","1,2,3","1,2,4","1,2,5","1,2,6","1,3,1","1,3,2","1,3,3","1,3,4","1,3,5","1,3,6","1,4,1","1,4,2","1,4,3","1,4,4","1,4,5","1,4,6","1,5,1","1,5,2","1,5,3","1,5,4","1,5,5","1,5,6","1,6,1","1,6,2","1,6,3","1,6,4","1,6,5","1,6,6"];// aqui podriamos hacer una tabla de puntos var tablapuntos=[5,10,15,30,40,50,60,80,150,250,500];
 
 var combinacion=[];	
 var figuras=[];
@@ -42,7 +41,7 @@ document.getElementById("jugar").onclick=function(){
 	
 	for (var i=1; i<4; i++){
 	
-		var azar= getRndInteger(1,7);
+		var azar= getRndInteger(1,6);
 		combinacion.push(azar);
 		document.getElementById("posicion"+i).src="/tragaperras/fig"+azar+".png";
 		
@@ -55,16 +54,33 @@ document.getElementById("jugar").onclick=function(){
 	    //var c = combinacion.toString(0);
 	    var c = combinacion.toString();
 	
-	   
-	
+	  
 	  
 	
 	  
-    	 
+	    
 }
-	 console.log("quiero ver la "+ c)
+	console.log(c.match(tablapremios.value));
+      if (aciertos == "1,2,1"){
+    	  alert("Premio has sumado 10 puntos ");
+	    	 puntos +=10; 
+ 	    document.getElementById("puntos").value= puntos;
+      	  
+    	  
+      }else if(aciertos == "1,2,3"){
+    	  alert("Premio has sumado 10 puntos ");
+	    	 puntos +=10; 
+	    document.getElementById("puntos").value= puntos;
+    	  
      
-	 console.info( tablapremios.includes(c.length) );
+    	 
+} 	 
+     
+	
+	//console.log("esta premiado? "+premiado);
+	// console.log("quiero ver la "+ c)
+     //console.info("tiene premio"+tablapremios.includes(c.value) );	 
+	 
 	 combinacion.splice(0,combinacion.length);
 	    /*if( a==177 ){
 	    	alert("Premio has sumado 2 puntos ");
